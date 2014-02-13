@@ -1,0 +1,47 @@
+﻿<Canvas 
+  xmlns="http://schemas.microsoft.com/client/2007"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  x:Name="SceneCanvas">
+	<Rectangle x:Name="SceneMask" Fill="#FF000000" Stroke="#FF000000" Opacity="0" Visibility="Collapsed" Canvas.ZIndex="1000">
+		<Rectangle.Resources>
+			<Storyboard x:Name="ShowSceneMask">
+				<DoubleAnimation Storyboard.TargetName="SceneCanvas" Storyboard.TargetProperty="Opacity" From="1" To="0.5" Duration="0:0:0.1" />
+			</Storyboard>
+			<Storyboard x:Name="HideSceneMask">
+				<DoubleAnimation Storyboard.TargetName="SceneCanvas" Storyboard.TargetProperty="Opacity" From="0.5" To="1" Duration="0:0:0.1"/>
+			</Storyboard>
+		</Rectangle.Resources>
+	</Rectangle>
+	<Line x:Name="PagingSeparator" X1="60" X2="260" Y1="60" Y2="60" Stroke="White" StrokeThickness="0.25"></Line>
+	<TextBlock x:Name="PreviousPage" FontSize="12" Text="&lt;&lt; previous" Foreground="White" Cursor="Hand" Visibility="Collapsed">
+		<TextBlock.Resources>
+			<Storyboard x:Name="ShowPrevious">
+				<DoubleAnimation Storyboard.TargetName="PreviousPage" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.5"/>
+			</Storyboard>
+			<Storyboard x:Name="HidePrevious">
+				<DoubleAnimation Storyboard.TargetName="PreviousPage" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0.5"/>
+			</Storyboard>
+		</TextBlock.Resources>
+	</TextBlock>
+	<TextBlock x:Name="NextPage" FontSize="12" Text="next &gt;&gt;" Foreground="White" Cursor="Hand" Visibility="Collapsed">
+		<TextBlock.Resources>
+			<Storyboard x:Name="ShowNext">
+				<DoubleAnimation Storyboard.TargetName="NextPage" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.5"/>
+			</Storyboard>
+			<Storyboard x:Name="HideNext">
+				<DoubleAnimation Storyboard.TargetName="NextPage" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0.5"/>
+			</Storyboard>
+		</TextBlock.Resources>
+	</TextBlock>
+	<TextBlock x:Name="PageCount" Foreground="White" FontSize="12" />
+	<Canvas x:Name="NoResultsMessage" Opacity="0" Canvas.ZIndex="1000">
+		<Canvas.Resources>
+			<Storyboard x:Name="ShowNoResultsMessage">
+				<DoubleAnimation Storyboard.TargetName="NoResultsMessage" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.5"/>
+			</Storyboard>
+		</Canvas.Resources>
+		<TextBlock x:Name="PrimaryMessage" FontSize="24" Foreground="White" />
+		<TextBlock x:Name="SecondaryMessage" FontSize="16" Foreground="#ff4b88be" Cursor="Hand"/>
+	</Canvas>
+</Canvas>
+

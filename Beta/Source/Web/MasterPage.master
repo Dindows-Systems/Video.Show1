@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="True" CodeBehind="MasterPage.master.cs"
+    Inherits="MasterPage" %>
+<%@ Register Src="UserControls/Signup.ascx" TagName="Signup" TagPrefix="uc1" %>
+<%@ Register Src="UserControls/Login.ascx" TagName="Login" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Page-Enter" content="blendTrans(Duration=0.1)" />
+    <!-- Prevent IE Flicker -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <script type="text/javascript" src="http://agappdom.net/h/silverlight.js"></script>
+    <script type="text/javascript" src="Javascript/siteMenus.js"></script>
+    <script type="text/javascript">
+        siteMenu.loadEvent(siteMenu.setHoverMenu);
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!--[if IE 7]>
+        <link runat="server" rel="stylesheet" href="~/CSS/DefaultStyle-IE7.css" />
+    <![endif]-->
+        <!--[if lt IE 7]>
+        <link runat="server" rel="stylesheet" href="~/CSS/DefaultStyle-IE6.css" />
+    <![endif]-->
+    <!--[if lt IE 7]>
+        <script defer type="text/javascript" src="Javascript/pngfix.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <form id="MainForm" runat="server" defaultbutton="Search" defaultfocus="SearchText">
+    <!-- TODO: Move services to applicable pages and use asp:ScriptManagerProxy so they aren't loaded unnecessariliy -->
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true">
+        <Services>
+            <asp:ServiceReference Path="~/Webservices/VideoWebservice.asmx" />
+            <asp:ServiceReference Path="~/Webservices/TagWebservice.asmx" />
+            <asp:ServiceReference Path="~/Webservices/CommentWebservice.asmx" />
+            <asp:ServiceReference Path="~/Webservices/FavoriteWebservice.asmx" />
+        </Services>
+    </asp:ScriptManager>
+    <div id="frame">  
+        <div id="main">
+            <div id="masthead">
+            <h1 id="logo">
+                <a href="Default.aspx" title="Home">
+                    
+                        After Eight
+                </a>
+</h1>
+                <div class="clearFloat">
+                </div>
+                <div id="menu-nav">
+                    <asp:Menu runat="server" ID="MainMenu" Orientation="Horizontal">
+                        <StaticSelectedStyle CssClass="MenuItemSelected" />
+                        <Items>
+                            <asp:MenuItem Text="Home" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Videos" NavigateUrl="~/Tags.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Members" NavigateUrl="~/MemberList.aspx"></asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                    <div id="site-search">
+                        <asp:Panel ID="SearchForm" runat="server" DefaultButton="Search">
+                            <label>
+                                Search Tags</label>
+                            <asp:TextBox runat="server" ID="SearchTags" />
+                            <asp:LinkButton CssClass="go-search" Text="Go" runat="server" ID="Search" OnClick="Search_Click"></asp:LinkButton>
+                        </asp:Panel>
+                    </div>
+                    <div class="clearFloat">
+                    </div>
+                </div>
+            </div>
+            <div id="content-frame"> 
+            <div id="screen-cover"></div>
+                <asp:ContentPlaceHolder ID="contentPlaceHolderMain" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="playlist-frame">
+                <asp:ContentPlaceHolder ID="contentPlaceHolderPlaylist" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div id="frame-bottom">
+            <div id="frame-corner-left">
+            </div>
+            <div id="frame-corner-right">
+            </div>
+            <div id="frame-bottom-body">
+            </div>
+        </div>
+        <div id="frame-bottom2">
+            <div id="frame-corner-left2">
+            </div>
+            <div id="frame-corner-right2">
+            </div>
+            <div id="frame-bottom-body2">
+            </div>
+        </div>
+    </div>
+    <a id="byVertigo" href="http://www.vertigo.com">Created by Vertigo</a>
+    <div id="login">
+        <asp:LoginView ID="LoginView" runat="server">
+            <LoggedInTemplate>
+                <div>
+                    <span id="welcome">Welcome <asp:LoginName ID="LoginName1" runat="server" />
+                    </span><span class="divider">|</span>
+                        <a runat="server" href="MemberProfile.aspx">Account</a>
+                    </span><span class="divider">|</span>
+                    <asp:LoginStatus ID="LoginStatus" runat="server" LogoutText="Sign Out" LogoutAction="Redirect" LogoutPageUrl="Default.aspx" />
+                </div>
+            </LoggedInTemplate>
+            <AnonymousTemplate>
+                <div style="display: block;">
+                    <uc1:Login ID="Login" runat="server" />
+                    <span id="sign-in-or-sign-up">or</span>
+                    <uc1:Signup ID="Signup" runat="server" />
+            </AnonymousTemplate>
+        </asp:LoginView>
+    </div>
+    </form>
+</body>
+</html>

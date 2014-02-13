@@ -1,0 +1,88 @@
+﻿#aspnetForm
+{
+	margin-top: 0px;
+}
+#frame
+{
+	padding-top: 0px;	
+}
+
+#login
+{	
+	position: absolute;
+	top: 40px;
+	right: 40px;
+	width: 200px;
+	margin-top: 0px;
+}
+div#sign-in-panel
+{
+	filter:Alpha(opacity=0);	
+}
+#sign-up-dialog
+{
+	filter:Alpha(opacity=0);
+}
+#screen-cover
+{
+	z-index: -10;
+    filter:Alpha(opacity=0);
+    height: 100%;
+}
+#PlayerContainer
+{
+	text-align: center;
+}
+table.member-list
+{
+	text-align: center;
+	margin: 0 auto;	
+}
+div#sign-in-panel div.AspNet-Login div.AspNet-Login-RememberMePanel label
+{
+	margin-top: 0px;	
+}
+img.avatar
+{
+	position: static;
+}
+#video-media-header img.avatar
+{
+	margin: 0px;	
+}
+.upload-video
+{
+	margin-top: 0px;
+}
+#members-dashboard
+{
+	margin-bottom: 0px;	
+}
+/* Home Page */
+
+body.homepage h1#logo
+{
+	background: none;
+	width: 500px;	
+	position: relative;
+	top: 40px;
+	left: 20px;
+}
+body.homepage #home-login-panel
+{
+	height: 210px;
+	width: 269px;
+	background: transparent url("../App_Themes/Default/Images/home-signup-bkgnd.png") no-repeat left bottom;
+	position: absolute;
+	top: -140px;
+	right: 30px;
+}
+body.homepage #menu-nav
+{	
+	margin-top: 109px;
+}
+div#playlist-frame
+{
+	font-size: 0px;
+	line-height: 0px;	
+}

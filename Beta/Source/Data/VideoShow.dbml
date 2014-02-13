@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<Database Name="C:\PROJECTS\VERTIGO\VideoShow\SOURCE\V1.0\WEB\APP_DATA\VideoShow.MDF" EntityNamespace="VideoShow.Data" ContextNamespace="VideoShow.Data" Class="VideoShowDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\VideoShow.mdf;Integrated Security=True;User Instance=False" SettingsObjectName="" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.aspnet_Membership" Member="aspnet_Memberships">
+    <Type Name="aspnet_Membership">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordFormat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordSalt" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="MobilePIN" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="LoweredEmail" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="PasswordQuestion" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="PasswordAnswer" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="IsApproved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsLockedOut" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastLoginDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastPasswordChangedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastLockoutDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAttemptCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAttemptWindowStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAnswerAttemptCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAnswerAttemptWindowStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="aspnet_User_aspnet_Membership" Member="aspnet_User" ThisKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VideosToTags" Member="VideosToTags">
+    <Type Name="VideosToTag">
+      <Column Name="VideoToTagId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VideoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TagId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Tag_VideosToTag" Member="Tag" ThisKey="TagId" Type="Tag" IsForeignKey="true" />
+      <Association Name="Video_VideosToTag" Member="Video" ThisKey="VideoId" Type="Video" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VideoStatus" Member="VideoStatus">
+    <Type Name="VideoStatus">
+      <Column Name="StatusId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="StatusOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="VideoStatus_Video" Member="Videos" OtherKey="StatusId" Type="Video" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Favorites" Member="Favorites">
+    <Type Name="Favorite">
+      <Column Name="FavoriteId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="VideoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Video_Favorite" Member="Video" ThisKey="VideoId" Type="Video" IsForeignKey="true" />
+      <Association Name="aspnet_User_Favorite" Member="aspnet_User" ThisKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tags" Member="Tags">
+    <Type Name="Tag">
+      <Column Name="TagId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tag" Member="Tag1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Tag_VideosToTag" Member="VideosToTags" OtherKey="TagId" Type="VideosToTag" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Videos" Member="Videos">
+    <Type Name="Video">
+      <Column Name="VideoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OwnerUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="VideoUrl" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ThumbnailUrl" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DatePublished" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SizeInKilobytes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DurationInSeconds" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StatusId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PreviewUrl" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Video_VideosToTag" Member="VideosToTags" OtherKey="VideoId" Type="VideosToTag" />
+      <Association Name="Video_Favorite" Member="Favorites" OtherKey="VideoId" Type="Favorite" />
+      <Association Name="Video_View" Member="Views" OtherKey="VideoId" Type="View" />
+      <Association Name="Video_Comment" Member="Comments" OtherKey="VideoId" Type="Comment" />
+      <Association Name="VideoStatus_Video" Member="VideoStatus" ThisKey="StatusId" Type="VideoStatus" IsForeignKey="true" />
+      <Association Name="aspnet_User_Video" Member="aspnet_User" ThisKey="OwnerUserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Views" Member="Views">
+    <Type Name="View">
+      <Column Name="ViewId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VideoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateViewed" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Video_View" Member="Video" ThisKey="VideoId" Type="Video" IsForeignKey="true" />
+      <Association Name="aspnet_User_View" Member="aspnet_User" ThisKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comments" Member="Comments">
+    <Type Name="Comment">
+      <Column Name="CommentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="VideoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Member="Comment1" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="VideoTimeInSeconds" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Video_Comment" Member="Video" ThisKey="VideoId" Type="Video" IsForeignKey="true" />
+      <Association Name="aspnet_User_Comment" Member="aspnet_User" ThisKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Users" Member="aspnet_Users">
+    <Type Name="aspnet_User">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredUserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="MobileAlias" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="IsAnonymous" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_User_aspnet_Membership" Member="aspnet_Membership" OtherKey="UserId" Type="aspnet_Membership" Cardinality="One" />
+      <Association Name="aspnet_User_Favorite" Member="Favorites" OtherKey="UserId" Type="Favorite" />
+      <Association Name="aspnet_User_Video" Member="Videos" OtherKey="OwnerUserId" Type="Video" />
+      <Association Name="aspnet_User_View" Member="Views" OtherKey="UserId" Type="View" />
+      <Association Name="aspnet_User_Comment" Member="Comments" OtherKey="UserId" Type="Comment" />
+      <Association Name="aspnet_User_UsersToAvatar" Member="UsersToAvatars" OtherKey="UserId" Type="UsersToAvatar" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UsersToAvatars" Member="UsersToAvatars">
+    <Type Name="UsersToAvatar">
+      <Column Name="UserToAvatarId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AvatarId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_User_UsersToAvatar" Member="aspnet_User" ThisKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="Avatar_UsersToAvatar" Member="Avatar" ThisKey="AvatarId" Type="Avatar" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Avatars" Member="Avatars">
+    <Type Name="Avatar">
+      <Column Name="AvatarId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ImageUrl" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Avatar_UsersToAvatar" Member="UsersToAvatars" OtherKey="AvatarId" Type="UsersToAvatar" />
+    </Type>
+  </Table>
+</Database>

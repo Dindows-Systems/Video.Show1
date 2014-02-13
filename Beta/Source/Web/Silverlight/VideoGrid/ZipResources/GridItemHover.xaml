@@ -1,0 +1,59 @@
+﻿<Canvas xmlns="http://schemas.microsoft.com/client/2007" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="ItemHover" Background="#00000000" Height="182" Width="236" Visibility="Collapsed">
+	<Canvas.Resources>
+		<Storyboard x:Name="ItemHoverShowStoryboard">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetName="ItemHover" Storyboard.TargetProperty="Opacity">
+				<DiscreteDoubleKeyFrame Value="0" KeyTime="0:0:0"/>
+				<SplineDoubleKeyFrame KeySpline="0.0,0.5 0.5,1.0" Value="1.0" KeyTime="0:0:.25"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetName="ItemHoverScaleTransform" Storyboard.TargetProperty="ScaleX" Duration="0:0:.25">
+				<DiscreteDoubleKeyFrame Value="0" KeyTime="0:0:0"/>
+				<SplineDoubleKeyFrame KeySpline="0.0,0.5 0.5,1.0" Value="1.0" KeyTime="0:0:.25"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetName="ItemHoverScaleTransform" Storyboard.TargetProperty="ScaleY" Duration="0:0:.25">
+				<DiscreteDoubleKeyFrame Value="0" KeyTime="0:0:0"/>
+				<SplineDoubleKeyFrame KeySpline="0.0,0.5 0.5,1.0" Value="1.0" KeyTime="0:0:.25"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+
+		<Storyboard x:Name="ItemHoverHideStoryboard">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetName="ItemHover" Storyboard.TargetProperty="Opacity">
+				<DiscreteDoubleKeyFrame Value="1" KeyTime="0:0:0"/>
+				<SplineDoubleKeyFrame KeySpline="0.0,0.5 0.5,1.0" Value="0.0" KeyTime="0:0:.25"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetName="ItemHoverScaleTransform" Storyboard.TargetProperty="ScaleX" Duration="0:0:.25">
+				<DiscreteDoubleKeyFrame Value="1" KeyTime="0:0:0"/>
+				<SplineDoubleKeyFrame KeySpline="0.0,0.5 0.5,1.0" Value="0.0" KeyTime="0:0:.25"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetName="ItemHoverScaleTransform" Storyboard.TargetProperty="ScaleY" Duration="0:0:.25">
+				<DiscreteDoubleKeyFrame Value="1" KeyTime="0:0:0"/>
+				<SplineDoubleKeyFrame KeySpline="0.0,0.5 0.5,1.0" Value="0.0" KeyTime="0:0:.25"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</Canvas.Resources>
+	<Canvas.RenderTransform>
+		<ScaleTransform x:Name="ItemHoverScaleTransform"/>
+	</Canvas.RenderTransform>
+
+	<Image x:Name="ItemHoverBackground" Cursor="Hand" Height="182" Width="236" Stretch="Fill"/>
+	<TextBlock x:Name="ItemHoverTitle" Cursor="Hand" Foreground="White" Canvas.Left="20" Canvas.Top="15" Width="196" Height="20" FontSize="12" />
+	<Canvas Canvas.Left="20" Canvas.Top="35" Width="196" Height="111">
+		<Image x:Name="ItemHoverThumbnail" Stretch="Fill" Cursor="Hand" Width="196" Height="111" />
+		<MediaElement x:Name="ItemHoverPreview" Stretch="UniformToFill" Cursor="Hand" Width="196" Height="111" />
+
+		<Canvas x:Name="ItemHoverLoadingPreview" Width="196" Height="81" Visibility="Collapsed">
+			<Rectangle Width="196" Height="81" Opacity="0.5" Fill="Black" />
+			<TextBlock x:Name="ItemHoverLoadingProgress" Cursor="Hand" Foreground="White" Canvas.Left="60" Canvas.Top="35" FontSize="10"/>
+		</Canvas>
+
+		<Canvas Canvas.Top="81" Width="196" Height="30">
+			<Rectangle Width="196" Height="30" Opacity="0.5" Fill="Black" />
+			<Image x:Name="ItemHoverInfoAvatar" Canvas.Top="5" Canvas.Left="5" Height="20" Width="20"/>
+			<TextBlock x:Name="ItemHoverInfoDetail" Cursor="Hand" Foreground="White" Canvas.Left="30" Canvas.Top="0" Height="30" Width="166">
+				<Run x:Name="ItemHoverInfoOwner" FontSize="10"></Run>
+				<LineBreak/>
+				<Run x:Name="ItemHoverInfoProperties" FontSize="10"></Run>
+			</TextBlock>
+		</Canvas>
+	</Canvas>
+	<TextBlock x:Name="ItemHoverTags" Cursor="Hand" Foreground="White" Canvas.Left="20" Canvas.Top="151" Width="196" Height="30" FontSize="11"/>
+</Canvas>

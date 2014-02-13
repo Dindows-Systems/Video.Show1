@@ -1,0 +1,204 @@
+﻿#aspnetForm
+{
+	margin-top: 0px;
+}
+
+#main
+{
+	background:  transparent url("../App_Themes/Default/Images/page-gradient.gif") repeat-x;	
+	height: 735px;
+}
+#frame
+{
+	padding-top: 0px;	
+}
+
+div#masthead div#menu-nav div.AspNet-Menu-Horizontal ul.AspNet-Menu li.AspNet-Menu-Leaf
+{
+	position: static;
+	zoom: 1;	
+	float: left;
+}
+div#masthead div#menu-nav div.AspNet-Menu-Horizontal ul.AspNet-Menu li.AspNet-Menu-Leaf a.AspNet-Menu-Link
+{
+	float: left;	
+}
+div#menu-nav
+{
+	position: relative;
+	zoom: 1;	
+	z-index: 0;
+}
+#masthead
+{
+	margin: 0px 0px 0px 0px;
+	background: transparent url("../App_Themes/Default/Images/bannerBG_interiorPg.png") no-repeat;
+	height: 130px;
+	width: 100%;
+}
+
+div#masthead h1#logo
+{
+	margin: 30px 0px 20px 40px;	
+	padding: 0px 0px 0px 40px;
+	position: relative; left: 20px;
+}
+body.homepage div#masthead h1#logo a
+{
+	background: transparent url("../App_Themes/Default/Images/VideoShow.png") no-repeat 40px 0px;	
+}
+body.homepage div#masthead h1#logo
+{
+	margin: 0px 0px 0px 0px;
+	padding: 0px;	
+	position: relative; left: 24px;
+}
+#content-frame
+{
+	margin-top: 20px;
+	background: #5b6570 url("../App_Themes/Default/Images/page-gradient.gif") repeat-x 0px -150px;
+	position: relative;
+	height: 580px;
+}
+div#site-search a.go-search
+{
+	padding: 0px;
+	top: 0px;
+	margin-left: 6px;
+	height: 18px;
+	width: 39px;
+	padding-top: 4px;
+	text-align: center;
+	display: inline-block;
+}
+div#sign-in-panel
+{
+	z-index: 100;	
+}
+div#sign-in-panel div.LoginDialog div.button a, body.homepage div#sign-in-panel div.LoginDialog div.button a
+{
+	float: left;	
+}
+div#sign-in-panel  div.LoginDialog div.AspNet-Login-SubmitPanel div.button, body.homepage div#sign-in-panel  div.LoginDialog div.AspNet-Login-SubmitPanel div.button
+{
+	zoom: 1;
+	position: relative;	
+}
+body.homepage div#sign-in-panel  div.LoginDialog div.AspNet-Login-SubmitPanel div.button a
+{
+	display: block;	
+	height: 22px;
+	zoom: 1;
+	position: relative;
+}
+body.homepage div#tag-cloud
+{
+	margin-left: 30px;
+}
+body.homepage a#byVertigo
+{
+	left: -478px;
+}
+#menu-nav
+{	
+	position: relative;
+}
+body.homepage #menu-nav
+{	
+	margin-top: 102px;
+	pposition: static;
+}
+
+.upload-video
+{
+	background: transparent url("../App_Themes/Default/Images/upload-button-ie6.png") no-repeat;
+	width: 175px;
+	padding: 0px;
+}
+.upload-video span
+{
+	background: none;
+	width:100%;
+	text-align: center;
+	padding: 16px 0px 0px 0px;
+}
+#upload-top
+{
+	height: 4px;
+	background: transparent url("../App_Themes/Default/Images/upload-top.gif") no-repeat;	
+	line-height: 0px;
+	font-size: 0px;
+}
+
+
+div#sign-in-panel div.AspNet-Login div.AspNet-Login-RememberMePanel label
+{
+	margin-top: -2px;	
+}
+
+
+div#masthead h1#logo
+{
+	left: -100px;	
+}
+body.homepage div#masthead h1#logo
+{
+	left: 40px;	
+}
+body.homepage div#masthead h1#logo a
+{
+	height: 0px;
+	padding-top: 37px;
+	display: block;
+	width: 500px;
+	background: transparent url("../App_Themes/Default/Images/VideoShowWelcome.png") no-repeat;
+	overflow: hidden;
+	margin-top: 15px;
+}
+body.homepage a#byVertigo
+{
+	left: -454px;
+}
+body.homepage div#content-frame
+{
+	border-top: solid 1px #616569;
+	margin-top: -4px;
+	padding-top: 10px;	
+}
+div#playlist-frame
+{
+	position: relative;
+	z-index: 200;	
+	width: 950px;
+	font-size: 0px;
+	line-height: 0px;
+}
+
+div#Player 
+{
+	margin-top: 20px;	
+}
+
+#video-media-header div.member-data
+{
+	margin-left: 25px;
+	margin-top: 0px;	
+}
+#login-request-span
+{
+	float: right;
+	position: relative;
+	top: 8px;	
+}
+div#PlayerContainer #video-media-header ul#dashboard-links
+{
+	padding: 2px 0px;	
+}
+div#screen-cover
+{
+	height: 785px;	
+}
+#page-content
+{
+	margin: 0px 20px;	
+}

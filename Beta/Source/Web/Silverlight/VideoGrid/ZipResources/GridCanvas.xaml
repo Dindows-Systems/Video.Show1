@@ -1,0 +1,37 @@
+﻿<Canvas xmlns="http://schemas.microsoft.com/client/2007" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="GridCanvas">
+	<Canvas.RenderTransform>
+		<TranslateTransform x:Name="GridCanvasTranslateTransform" X="0" Y="0"/>
+	</Canvas.RenderTransform>
+	<Canvas.Resources>
+		<Storyboard x:Name="GridCanvasDisableStoryboard">
+			<DoubleAnimation Storyboard.TargetName="GridCanvas" Storyboard.TargetProperty="Opacity" From="1" To="0.5" Duration="0:0:0.2"/>
+		</Storyboard>
+		<Storyboard x:Name="GridCanvasEnableStoryboard">
+			<DoubleAnimation Storyboard.TargetName="GridCanvas" Storyboard.TargetProperty="Opacity" From="0.5" To="1" Duration="0:0:0.2"/>
+		</Storyboard>
+		<Storyboard x:Name="GridCanvasStoryboardOutToLeft">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetName="GridCanvasTranslateTransform" Storyboard.TargetProperty="X" Duration="0:0:0.4" BeginTime="0:0:0.0">
+				<SplineDoubleKeyFrame KeySpline="0.5,0.0 1.0,0.5" Value="-500" KeyTime="0:0:0.2"></SplineDoubleKeyFrame>
+				<SplineDoubleKeyFrame KeySpline="0.0,0.5 0.5,1.0" Value="-1000" KeyTime="0:0:0.4"></SplineDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="GridCanvasStoryboardOutToRight">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetName="GridCanvasTranslateTransform" Storyboard.TargetProperty="X" Duration="0:0:0.4" BeginTime="0:0:0.0">
+				<SplineDoubleKeyFrame KeySpline="0.5,0.0 1.0,0.5" Value="500" KeyTime="0:0:0.2"></SplineDoubleKeyFrame>
+				<SplineDoubleKeyFrame KeySpline="0.0,0.5 0.5,1.0" Value="1000" KeyTime="0:0:0.4"></SplineDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="GridCanvasStoryboardInFromLeft">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetName="GridCanvasTranslateTransform" Storyboard.TargetProperty="X" Duration="0:0:0.4" BeginTime="0:0:0.0">
+				<SplineDoubleKeyFrame KeySpline="0.5,0.0 1.0,0.5" Value="500" KeyTime="0:0:0.2"></SplineDoubleKeyFrame>
+				<SplineDoubleKeyFrame KeySpline="0.0,0.5 0.5,1.0" Value="0" KeyTime="0:0:0.4"></SplineDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="GridCanvasStoryboardInFromRight">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetName="GridCanvasTranslateTransform" Storyboard.TargetProperty="X" Duration="0:0:0.4" BeginTime="0:0:0.0">
+				<SplineDoubleKeyFrame KeySpline="0.5,0.0 1.0,0.5" Value="-500" KeyTime="0:0:0.2"></SplineDoubleKeyFrame>
+				<SplineDoubleKeyFrame KeySpline="0.0,0.5 0.5,1.0" Value="0" KeyTime="0:0:0.4"></SplineDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</Canvas.Resources>
+</Canvas>

@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.625, 14" name="VideoShow">
+  <DataContextMoniker Name="/VideoShowDataContext" />
+  <nestedChildShapes>
+    <classShape Id="bfe94676-8d8d-45aa-b28b-353252178434" absoluteBounds="1, 6.625, 2, 4.8477197265624987">
+      <DataClassMoniker Name="/VideoShowDataContext/aspnet_Membership" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b6d00018-e86c-4dbb-aba1-ca315bd0d511" absoluteBounds="1.0149999999999997, 7.085, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1479cd1d-ced7-4a94-83cb-d76a6a6eb8af" absoluteBounds="8.125, 11.625, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/VideoShowDataContext/VideosToTag" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bb711c53-4abd-4bed-88dc-69ed63e0cdd1" absoluteBounds="8.14, 12.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="71625f08-56f7-499a-b0ca-18f52e2b2195" absoluteBounds="9.25, 7.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/VideoShowDataContext/VideoStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="78ae0c46-6ae2-4e1f-bd8a-4289c376c196" absoluteBounds="9.265, 7.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="970f23d2-7ed4-4c81-970f-c976660c7bcb" absoluteBounds="3.625, 12.375, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/VideoShowDataContext/Favorite" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c08e3024-9824-4cec-a615-ac205e1036cf" absoluteBounds="3.6400000000000006, 12.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56ef01ec-c324-4bc4-9481-947f47907099" absoluteBounds="9.25, 9.625, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/VideoShowDataContext/Tag" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5600f6ce-84d8-4212-84fc-61ef2509927a" absoluteBounds="9.265, 10.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.6875 : 10.8189925130208); (9.6875 : 11.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/VideoShowDataContext/Tag/Tag_VideosToTag" />
+      <nodes>
+        <classShapeMoniker Id="56ef01ec-c324-4bc4-9481-947f47907099" />
+        <classShapeMoniker Id="1479cd1d-ced7-4a94-83cb-d76a6a6eb8af" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="20216977-cb69-4f46-bec5-d5855d0e6a9b" absoluteBounds="6.625, 7, 2, 2.9247054036458318">
+      <DataClassMoniker Name="/VideoShowDataContext/Video" />
+      <nestedChildShapes>
+        <elementListCompartment Id="53a6b43e-f828-48fe-a43e-4d9ee6c7536e" absoluteBounds="6.6400000000000006, 7.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.375 : 9.92470540364583); (8.375 : 11.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/VideoShowDataContext/Video/Video_VideosToTag" />
+      <nodes>
+        <classShapeMoniker Id="20216977-cb69-4f46-bec5-d5855d0e6a9b" />
+        <classShapeMoniker Id="1479cd1d-ced7-4a94-83cb-d76a6a6eb8af" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.34375 : 9.92470540364583); (7.34375 : 13.4175439453125); (5.625 : 13.4175439453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/VideoShowDataContext/Video/Video_Favorite" />
+      <nodes>
+        <classShapeMoniker Id="20216977-cb69-4f46-bec5-d5855d0e6a9b" />
+        <classShapeMoniker Id="970f23d2-7ed4-4c81-970f-c976660c7bcb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.25 : 7.81814697265625); (8.625 : 7.81814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/VideoShowDataContext/VideoStatus/VideoStatus_Video" />
+      <nodes>
+        <classShapeMoniker Id="71625f08-56f7-499a-b0ca-18f52e2b2195" />
+        <classShapeMoniker Id="20216977-cb69-4f46-bec5-d5855d0e6a9b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a3b91026-dac6-4214-badc-ce65f76f2921" absoluteBounds="9.375, 4.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/VideoShowDataContext/View" />
+      <nestedChildShapes>
+        <elementListCompartment Id="de6c8a86-3966-4cc1-9f35-0a9e444d9551" absoluteBounds="9.39, 5.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.625 : 7); (7.625 : 5.41429768880208); (9.375 : 5.41429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/VideoShowDataContext/Video/Video_View" />
+      <nodes>
+        <classShapeMoniker Id="20216977-cb69-4f46-bec5-d5855d0e6a9b" />
+        <classShapeMoniker Id="a3b91026-dac6-4214-badc-ce65f76f2921" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="064b4a5b-e1cf-46eb-b9a4-32887d6dd49b" absoluteBounds="12.375, 7.5, 2, 1.9631982421874996">
+      <DataClassMoniker Name="/VideoShowDataContext/Comment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="92d5bad6-b38b-4de3-82bb-4ea6d2ed0348" absoluteBounds="12.39, 7.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.625 : 9.01849609375); (11.9166666666667 : 9.01849609375 : JumpStart); (12.0833333333333 : 9.01849609375 : JumpEnd); (12.375 : 9.01849609375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/VideoShowDataContext/Video/Video_Comment" />
+      <nodes>
+        <classShapeMoniker Id="20216977-cb69-4f46-bec5-d5855d0e6a9b" />
+        <classShapeMoniker Id="064b4a5b-e1cf-46eb-b9a4-32887d6dd49b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="98b12974-d61f-49d7-9dbb-0f55a239159c" absoluteBounds="3.625, 7.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/VideoShowDataContext/aspnet_User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9e495fdf-cdc7-4b73-b00b-8dc8c6592b82" absoluteBounds="3.64, 8.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.625 : 8.95274983723958); (3 : 8.95274983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/VideoShowDataContext/aspnet_User/aspnet_User_aspnet_Membership" />
+      <nodes>
+        <classShapeMoniker Id="98b12974-d61f-49d7-9dbb-0f55a239159c" />
+        <classShapeMoniker Id="bfe94676-8d8d-45aa-b28b-353252178434" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.625 : 10.0304996744792); (4.625 : 12.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/VideoShowDataContext/aspnet_User/aspnet_User_Favorite" />
+      <nodes>
+        <classShapeMoniker Id="98b12974-d61f-49d7-9dbb-0f55a239159c" />
+        <classShapeMoniker Id="970f23d2-7ed4-4c81-970f-c976660c7bcb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.625 : 8.89985270182292); (6.625 : 8.89985270182292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/VideoShowDataContext/aspnet_User/aspnet_User_Video" />
+      <nodes>
+        <classShapeMoniker Id="98b12974-d61f-49d7-9dbb-0f55a239159c" />
+        <classShapeMoniker Id="20216977-cb69-4f46-bec5-d5855d0e6a9b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.96875 : 7.875); (3.96875 : 6.07619466145833); (7.54166666666667 : 6.07619466145833 : JumpStart); (7.70833333333333 : 6.07619466145833 : JumpEnd); (9.375 : 6.07619466145833)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/VideoShowDataContext/aspnet_User/aspnet_User_View" />
+      <nodes>
+        <classShapeMoniker Id="98b12974-d61f-49d7-9dbb-0f55a239159c" />
+        <classShapeMoniker Id="a3b91026-dac6-4214-badc-ce65f76f2921" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.156252 : 10.0304996744792); (5.156252 : 10.1747054036458); (7.26041666666667 : 10.1747054036458 : JumpStart); (7.42708333333333 : 10.1747054036458 : JumpEnd); (8.29166666666667 : 10.1747054036458 : JumpStart); (8.45833333333333 : 10.1747054036458 : JumpEnd); (9 : 10.1747054036458); (9 : 9.375); (12 : 9.375); (12 : 8.48159912109375); (12.375 : 8.48159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/VideoShowDataContext/aspnet_User/aspnet_User_Comment" />
+      <nodes>
+        <classShapeMoniker Id="98b12974-d61f-49d7-9dbb-0f55a239159c" />
+        <classShapeMoniker Id="064b4a5b-e1cf-46eb-b9a4-32887d6dd49b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1609efac-9e42-4f35-8671-41be4733ee3f" absoluteBounds="4.375, 4.5, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/VideoShowDataContext/UsersToAvatar" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c9243d3e-aa26-4ff2-93ac-4c4de2452a93" absoluteBounds="4.39, 4.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5 : 7.875); (5 : 5.8862939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/VideoShowDataContext/aspnet_User/aspnet_User_UsersToAvatar" />
+      <nodes>
+        <classShapeMoniker Id="98b12974-d61f-49d7-9dbb-0f55a239159c" />
+        <classShapeMoniker Id="1609efac-9e42-4f35-8671-41be4733ee3f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b69a5c06-7d0e-44a3-a4bd-e09fcf532862" absoluteBounds="4.5, 2.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/VideoShowDataContext/Avatar" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc4eee28-5748-4448-9015-cfc8d2a6101b" absoluteBounds="4.5150000000000006, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.4375 : 3.94399251302083); (5.4375 : 4.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/VideoShowDataContext/Avatar/Avatar_UsersToAvatar" />
+      <nodes>
+        <classShapeMoniker Id="b69a5c06-7d0e-44a3-a4bd-e09fcf532862" />
+        <classShapeMoniker Id="1609efac-9e42-4f35-8671-41be4733ee3f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

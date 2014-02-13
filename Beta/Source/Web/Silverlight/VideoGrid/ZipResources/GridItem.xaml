@@ -1,0 +1,37 @@
+﻿<Canvas xmlns="http://schemas.microsoft.com/client/2007" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Item" Background="#00000000" Height="137" Width="162.4">
+
+	<Canvas.Resources>
+
+		<Storyboard x:Name="LoadStoryboard">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetName="Item" Storyboard.TargetProperty="Opacity">
+				<DiscreteDoubleKeyFrame Value="0" KeyTime="0:0:0"/>
+				<SplineDoubleKeyFrame KeySpline="0.0,0.5 0.5,1.0" Value="1.0" KeyTime="0:0:.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetName="ItemScaleTransform" Storyboard.TargetProperty="ScaleX" Duration="0:0:.5">
+				<DiscreteDoubleKeyFrame Value="0" KeyTime="0:0:0"/>
+				<SplineDoubleKeyFrame KeySpline="0.0,0.5 0.5,1.0" Value="1.0" KeyTime="0:0:.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetName="ItemScaleTransform" Storyboard.TargetProperty="ScaleY" Duration="0:0:.5">
+				<DiscreteDoubleKeyFrame Value="0" KeyTime="0:0:0"/>
+				<SplineDoubleKeyFrame KeySpline="0.0,0.5 0.5,1.0" Value="1.0" KeyTime="0:0:.5"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+
+		<Storyboard x:Name="PageStoryboard">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetName="Item" Storyboard.TargetProperty="Opacity">
+				<DiscreteDoubleKeyFrame Value="0" KeyTime="0:0:0"/>
+				<SplineDoubleKeyFrame KeySpline="0.0,0.5 0.5,1.0" Value="1.0" KeyTime="0:0:.5"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+
+	</Canvas.Resources>
+
+	<Canvas.RenderTransform>
+		<ScaleTransform x:Name="ItemScaleTransform" CenterX="81.2" CenterY="68.5"/>
+	</Canvas.RenderTransform>
+
+	<TextBlock x:Name="ItemTitle" Height="20" Width="162.4" Foreground="White" FontSize="12"></TextBlock>
+	<Image x:Name="ItemThumbnail" Cursor="Hand" Height="92" Width="162.4" Canvas.Top="20" Stretch="Fill"/>
+	<TextBlock x:Name="ItemTags" Height="21" Width="162.4" Canvas.Top="116" Foreground="White" FontSize="10"></TextBlock>
+
+</Canvas>

@@ -1,0 +1,435 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.20706</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{176E6818-7033-4D8C-BC7D-F26C17811ABA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VideoShow</RootNamespace>
+    <AssemblyName>VideoShow</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.10920.32919, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL" />
+    <Reference Include="CSSFriendly, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="WindowsBase, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\WindowsBase.dll</HintPath>
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllMembers.aspx.cs">
+      <DependentUpon>AllMembers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllMembers.aspx.designer.cs">
+      <DependentUpon>AllMembers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InstallHelp.aspx.cs">
+      <DependentUpon>InstallHelp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InstallHelp.aspx.designer.cs">
+      <DependentUpon>InstallHelp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginRedirect.aspx.cs">
+      <DependentUpon>LoginRedirect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginRedirect.aspx.designer.cs">
+      <DependentUpon>LoginRedirect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member.aspx.cs">
+      <DependentUpon>Member.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member.aspx.designer.cs">
+      <DependentUpon>Member.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MemberProfile.aspx.cs">
+      <DependentUpon>MemberProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberProfile.aspx.designer.cs">
+      <DependentUpon>MemberProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecentViews.aspx.cs">
+      <DependentUpon>RecentViews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecentViews.aspx.designer.cs">
+      <DependentUpon>RecentViews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tags.aspx.cs">
+      <DependentUpon>Tags.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tags.aspx.designer.cs">
+      <DependentUpon>Tags.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AvatarSelector.ascx.cs">
+      <DependentUpon>AvatarSelector.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AvatarSelector.ascx.designer.cs">
+      <DependentUpon>AvatarSelector.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Login.ascx.cs">
+      <DependentUpon>Login.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Login.ascx.designer.cs">
+      <DependentUpon>Login.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Player.ascx.cs">
+      <DependentUpon>Player.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Player.ascx.designer.cs">
+      <DependentUpon>Player.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Signup.ascx.cs">
+      <DependentUpon>Signup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Signup.ascx.designer.cs">
+      <DependentUpon>Signup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\VideoGrid.ascx.cs">
+      <DependentUpon>VideoGrid.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\VideoGrid.ascx.designer.cs">
+      <DependentUpon>VideoGrid.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MediaProcessing\JobFile.cs" />
+    <Compile Include="MediaProcessing\SilverlightStreamingUpload.cs" />
+    <Compile Include="MediaProcessing\Transcoder.cs" />
+    <Compile Include="MediaProcessing\Utils.cs" />
+    <Compile Include="MediaProcessing\VideoEncoderService.cs" />
+    <Compile Include="MediaProcessing\VideoProcessor.cs" />
+    <Compile Include="UserProfile.cs" />
+    <Compile Include="View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.master.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.master.designer.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="MemberList.aspx.cs">
+      <DependentUpon>MemberList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberList.aspx.designer.cs">
+      <DependentUpon>MemberList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Upload.aspx.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Upload.aspx.designer.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Webservices\FavoriteWebservice.asmx.cs">
+      <DependentUpon>FavoriteWebservice.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Webservices\TagWebservice.asmx.cs">
+      <DependentUpon>TagWebservice.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Webservices\UserWebservice.asmx.cs">
+      <DependentUpon>UserWebservice.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Webservices\VideoWebservice.asmx.cs">
+      <DependentUpon>VideoWebservice.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Webservices\CommentWebservice.asmx.cs">
+      <DependentUpon>CommentWebservice.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Silverlight\VideoGrid\ZipResources\GridCanvas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Silverlight\VideoGrid\ZipResources\GridItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Silverlight\Player\BasePlayer\BasePlayer.js" />
+    <Content Include="Silverlight\Player\BasePlayer\PlayerStrings.js" />
+    <Content Include="Silverlight\Player\Player.js">
+      <DependentUpon>Player.xaml</DependentUpon>
+    </Content>
+    <Content Include="Silverlight\VideoGrid\VideoGrid.js">
+      <DependentUpon>VideoGrid.xaml</DependentUpon>
+    </Content>
+    <Content Include="Silverlight\VideoGrid\VideoGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Browsers\CSSFriendlyAdapters.browser" />
+    <None Include="Silverlight\VideoGrid\VideoGrid.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Default\DefaultStyle.css" />
+    <Content Include="App_Themes\Default\Images\avatar.png" />
+    <Content Include="App_Themes\Default\Images\background-gradient.gif" />
+    <Content Include="App_Themes\Default\Images\background-gradient.png" />
+    <Content Include="App_Themes\Default\Images\background.png" />
+    <Content Include="App_Themes\Default\Images\dude.gif" />
+    <Content Include="App_Themes\Default\Images\female.gif" />
+    <Content Include="App_Themes\Default\Images\find-member-left.gif" />
+    <Content Include="App_Themes\Default\Images\find-member.gif" />
+    <Content Include="App_Themes\Default\Images\frame-bott-corner.gif" />
+    <Content Include="App_Themes\Default\Images\geezer.gif" />
+    <Content Include="App_Themes\Default\Images\general-button-small.gif" />
+    <Content Include="App_Themes\Default\Images\general-button.gif" />
+    <Content Include="App_Themes\Default\Images\go-button.gif" />
+    <Content Include="App_Themes\Default\Images\go-button.png" />
+    <Content Include="App_Themes\Default\Images\guy.gif" />
+    <Content Include="App_Themes\Default\Images\lady.gif" />
+    <Content Include="App_Themes\Default\Images\logo.png" />
+    <Content Include="App_Themes\Default\Images\menu-button.gif" />
+    <Content Include="App_Themes\Default\Images\more-img.gif" />
+    <Content Include="App_Themes\Default\Images\next-img.gif" />
+    <Content Include="App_Themes\Default\Images\page-gradient.gif" />
+    <Content Include="App_Themes\Default\Images\page-gradient.png" />
+    <Content Include="App_Themes\Default\Images\prev-img.gif" />
+    <Content Include="App_Themes\Default\Images\SL-control-bottom.gif" />
+    <Content Include="App_Themes\Default\Images\SL-control-top.gif" />
+    <Content Include="App_Themes\Default\Images\upload-bottom.gif" />
+    <Content Include="App_Themes\Default\Images\upload-button-left.png" />
+    <Content Include="App_Themes\Default\Images\upload-button.png" />
+    <Content Include="App_Themes\Default\Images\upload-top.gif" />
+    <Content Include="App_Themes\Default\Images\video-clip-holder.png" />
+    <Content Include="App_Themes\Default\Images\video-clip-thumb.png" />
+    <Content Include="App_Themes\Default\Images\video-sample.png" />
+    <Content Include="App_Themes\Default\Images\video-sample2.png" />
+    <Content Include="App_Themes\Default\Images\VideoSample.png" />
+    <Content Include="App_Themes\Default\Images\welcome-msg-body.png" />
+    <Content Include="App_Themes\Default\Images\welcome-msg-bottom.png" />
+    <Content Include="App_Themes\Default\Images\welcome-msg-top.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Libraries\AjaxControlToolkit.dll" />
+    <Content Include="Libraries\CSSFriendly.dll" />
+    <Content Include="Login.aspx" />
+    <Content Include="Silverlight\Player\Player.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="View.aspx" />
+    <Content Include="MasterPage.master" />
+    <Content Include="MemberList.aspx" />
+    <Content Include="Upload.aspx" />
+    <Content Include="_temp_upload\manifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AllMembers.aspx" />
+    <Content Include="App_Themes\Default\Images\avatar2.png" />
+    <Content Include="App_Themes\Default\Images\geezer.png" />
+    <Content Include="App_Themes\Default\Images\general-button-small-left.gif" />
+    <Content Include="App_Themes\Default\Images\sign-in-bkgnd.gif" />
+    <Content Include="App_Themes\Default\Images\tab-background.gif" />
+    <Content Include="App_Themes\Default\Images\welcome-msg-box.png" />
+    <Content Include="Javascript\siteMenus.js" />
+    <Content Include="Member.aspx" />
+    <Content Include="RecentViews.aspx" />
+    <Content Include="Tags.aspx" />
+    <Content Include="UserControls\Login.ascx" />
+    <Content Include="UserControls\Player.ascx" />
+    <Content Include="UserControls\Signup.ascx" />
+    <Content Include="Webservices\FavoriteWebservice.asmx" />
+    <Content Include="Webservices\TagWebservice.asmx" />
+    <Content Include="UserControls\VideoGrid.ascx" />
+    <Content Include="Webservices\UserWebservice.asmx" />
+    <Content Include="Webservices\VideoWebservice.asmx" />
+    <Content Include="Webservices\CommentWebservice.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{B23647C5-2C6A-46AE-BBE0-B9EB3B22D7AE}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Silverlight\VideoGrid\ZipResources\GridItemHover.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSS\DefaultStyle-IE6.css" />
+    <Content Include="CSS\DefaultStyle-IE7.css" />
+    <Content Include="App_Themes\Default\Images\bannerBG_homePg.png" />
+    <Content Include="App_Themes\Default\Images\bannerBG_interiorPg.png" />
+    <Content Include="App_Themes\Default\Images\frame-bott-corner.png" />
+    <Content Include="App_Themes\Default\Images\home-signup-bkgnd.png" />
+    <Content Include="App_Themes\Default\Images\tab-body-background.png" />
+    <Content Include="App_Themes\Default\Images\test3fpo2.png" />
+    <Content Include="App_Themes\Default\Images\VertigoLogo.png" />
+    <Content Include="App_Themes\Default\Images\VertigoLogoHome.png" />
+    <Content Include="App_Themes\Default\Images\x.gif" />
+    <Content Include="App_Themes\Default\Images\Avatars\avatar_baseball.jpg" />
+    <Content Include="App_Themes\Default\Images\Avatars\avatar_boats.jpg" />
+    <Content Include="App_Themes\Default\Images\Avatars\avatar_butterfly.jpg" />
+    <Content Include="App_Themes\Default\Images\Avatars\avatar_feather.jpg" />
+    <Content Include="App_Themes\Default\Images\Avatars\avatar_flower.jpg" />
+    <Content Include="App_Themes\Default\Images\Avatars\avatar_leaf.jpg" />
+    <Content Include="App_Themes\Default\Images\Avatars\avatar_light.jpg" />
+    <Content Include="App_Themes\Default\Images\Avatars\avatar_silverlight.jpg" />
+    <Content Include="App_Themes\Default\Images\Avatars\avatar_strawberry.jpg" />
+    <Content Include="App_Themes\Default\Images\Avatars\avatar_sunset.jpg" />
+    <Content Include="App_Themes\Default\Images\Avatars\avatar_window.jpg" />
+    <Content Include="Silverlight\VideoGrid\Images\thumbnail_placeholder.png" />
+    <Content Include="Javascript\pngfix.js" />
+    <Content Include="LoginRedirect.aspx" />
+    <Content Include="MemberProfile.aspx" />
+    <Content Include="Silverlight\VideoGrid\Images\video-popup-squat.png" />
+    <Content Include="UserControls\AvatarSelector.ascx" />
+    <Content Include="_temp_upload\JobFile.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\VideoShow.mdf">
+    </Content>
+    <Content Include="App_Data\VideoShow_log.ldf">
+      <DependentUpon>VideoShow.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Themes\Default\Images\frame-bott-corner-fade.gif" />
+    <Content Include="App_Themes\Default\Images\noSilverlightPreview.png" />
+    <Content Include="App_Themes\Default\Images\upload-button-ie6.png" />
+    <Content Include="App_Themes\Default\Images\VideoShowLogo.png" />
+    <Content Include="App_Themes\Default\Images\VideoShowLogoHome.png" />
+    <Content Include="App_Themes\Default\Images\welcome-msg.png" />
+    <Content Include="InstallHelp.aspx" />
+    <Content Include="Silverlight\Player\BasePlayer\ExtendedPlayer.js" />
+    <Content Include="Silverlight\Player\Images\comment_blur_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Thumbnails\" />
+    <Folder Include="Silverlight\Fonts\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2152</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <AlwaysStartWebServerOnDebug>True</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>
